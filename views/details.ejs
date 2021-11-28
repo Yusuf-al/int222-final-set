@@ -1,0 +1,238 @@
+    <link rel="stylesheet" type="text/css" href="/cssD/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/cssD/grid.css">
+    <link rel="stylesheet" type="text/css" href="/cssD/style.css">       
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
+    <body>
+        
+         <!------Navigation Start-->
+         <%- include('./nav.ejs')%>
+        <!--------Container Starrt-->
+        <section class="container">
+            <div class="bike_title">
+                <div class="name_review">
+                     <h3><%=singleProduct?.model%></h3>
+                     <p><i class="fab fa-envelope"></i><%=singleProduct?.ratingsAverage%></p>
+                     <p><i class="fab fa-eye"></i>520 Reviews</p>
+                </div>
+            </div>
+            <div class="bike_summary">
+                <div class="img_section">
+                    <div class="front_img">
+                        <img class="front_img_dec" src="/css/img/mt15-1.jpg" alt="">
+                    </div>
+                    <div class="list_img">
+                        <img src="/css/img/r15.jpg" alt="">
+                        <img src="/css/img/sf.jpg" alt="">
+                        <img src="/css/img/xsr1.jpg" alt="">
+                        <img src="/css/img/cb.png" alt="">
+                    </div>
+                </div>
+                <div class="dis_section">
+                    <h3>Price List</h3>
+                    <table class="priceList">
+                        <tr>
+                            <td><%=singleProduct?.price%></td>
+                        </tr>
+                       
+                    </table>
+                    <h3 class="description">Description</h3>
+                         <div class="description_par">
+                             <p><%=singleProduct?.description%></p>
+                         </div>
+                    </div>
+            </div>
+
+            <div class="feature">
+                    <div class="keyFeature">
+                        <div class="keyFeatureList">
+                            <div class="mainKeyFeature">
+                                <img src="#" alt="Top Speed">
+                                <p>250000</p>
+                                <p class="featureTitle">Price</p>
+                            </div>
+                            <div class="mainKeyFeature">
+                                <p><i class="fas fa-star"></i></p>
+                                <p>km/l</p>
+                                <p class="featureTitle"><%=ew[0] %></p>
+                            </div>
+                            <div class="mainKeyFeature">
+                                <p><i class="fas fa-star"></i></p>
+                                <p>130km/h</p>
+                                <p class="featureTitle"><%=ew[1] %></p>
+                            </div>
+                            <div class="mainKeyFeature">
+                                <p><i class="fas fa-star"></i></p>
+                                <p>Air Cooled</p>
+                                <p class="featureTitle"><%=ew[2] %></p>
+                            </div>
+                            <div class="mainKeyFeature">
+                                <p><i class="fas fa-star"></i></p>
+                                <p>12.5 HP</p>
+                                <p class="featureTitle">Maximum Power</p>
+                            </div>
+                            <div class="mainKeyFeature">
+                                <p><i class="fas fa-star"></i></p>
+                                <p>14.5 NM</p>
+                                <p class="featureTitle">Maximum Torque</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        <div class="spece">
+                <div class="specification">
+                    <h4>SPECIFICATION</h4>
+                </div>
+                <table>
+                    <tr><th colspan="2">Body Dimension</th></tr>
+                    <tr>
+                        <td>Engine</td>
+                        <td>Air Cooled</td>
+                    </tr>
+                    <tr>
+                        <td>Length / Width / Height</td>
+                        <td>1983mm / 694mm / 1038mm</td>
+                    </tr>
+                    <tr>
+                        <td>Wheel base</td>
+                        <td>1311mm</td>
+                    </tr>
+                    <tr>
+                        <td>Kerb weight</td>
+                        <td>135Kg</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel tank capacity</td>
+                        <td>12L</td>
+                    </tr>
+
+                    <tr><th colspan="2">Engine Details</th></tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>4-Stroke, DOHC, 4-Valve</td>
+                    </tr>
+                    <tr>
+                        <td>Displacement</td>
+                        <td>149.16 CC</td>
+                    </tr>
+                    <tr>
+                        <td>Max net power</td>
+                        <td>12.6 kW @9.000 rpm</td>
+                    </tr>
+                    <tr>
+                        <td>Max net torque</td>
+                        <td>14.4 Nm @7.000 rpm/td>
+                    </tr>
+                    <tr>
+                        <td>Starting method</td>
+                        <td>Electric Starter</td>
+                    </tr>
+
+                    <tr><th colspan="2">Transmission Details</th></tr>
+                    <tr>
+                        <td>Gear type</td>
+                        <td>Manual</td>
+                    </tr>
+                    <tr>
+                        <td>Number Of Speed Gears</td>
+                        <td>6</td>
+                    </tr>
+
+                    <tr><th colspan="2">Tyres & brakes</th></tr>
+                    <tr>
+                        <td>Tyre Size (Front)</td>
+                        <td>100/80 - 17 M/C 52P</td>
+                    </tr>
+                    <tr>
+                        <td>Tyre Size (Rear)</td>
+                        <td>130/70 - 17 M/C 62P</td>
+                    </tr>
+                    <tr>
+                        <td>Brakes Front</td>
+                        <td>Hidraulic Disc (ABS)</td>
+                    </tr>
+                    <tr>
+                        <td>Brakes Rear</td>
+                        <td>Hidraulic Disc (ABS)</td>
+                    </tr>
+
+                    <tr><th colspan="2"> Frame & Suspension</th></tr>
+                    <tr>
+                        <td>Chassis Type</td>
+                        <td>Diamond (Truss) Frame</td>
+                    </tr>
+                    <tr>
+                        <td>Suspension-Front</td>
+                        <td>Telescopic</td>
+                    </tr>
+                    <tr>
+                        <td>Suspension-Rear</td>
+                        <td>Monosuspension with pro-Link</td>
+                    </tr>
+
+                    <tr><th colspan="2">Electricals</th></tr>
+                    <tr>
+                        <td>Battery</td>
+                        <td>MF 12V - 5.0 Ah</td>
+                    </tr>
+                    <tr>
+                        <td>Head Lamp</td>
+                        <td>12V 60/55W</td>
+                    </tr>
+                    <tr>
+                        <td>Display Meter</td>
+                        <td>Digital</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="review-sec">
+            <div class="review-container">
+                <section class="review-left">
+                  <h3 style="margin-bottom: 20px">All Reviews</h3>
+                  <% for (i = 0; i < rv.length; i++) { %>
+                      <div class="opc">
+                    <div class="imgName">
+                      <img src="/cssD/img/im1.jpg" class="personImg" alt="Profile Pic" />
+                      <h4 class="personName chngName"><%= rv[i].name%> </h4>
+                    </div>
+                    <p class="commentText">
+                      <%=rv[i].review%> 
+                    </p>
+                  </div>
+                 <% }; %> 
+                  
+                </section>
+                <section class="review-right">
+                  <h3>Review & Rating</h3>
+                  <form action='/details/<%=singleProduct?.slug%>' class="review-form" method="POST">
+                    <input type="text" class="review-input name" name="name" placeholder="Enter Name" required/>
+                    <input type="email" class="review-input email" name="email" placeholder="Enter Email" required />
+                    <label for="rating">Rating (between 1 and 5)</label>
+                    <input type="number" id="rating" name="rating" class="review-input" min="1" max="5">
+                    <textarea
+                      name="text"
+                      class="input text"
+                      placeholder="Your comments plz!"
+                      id=""
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                    <button click="test()" class="btn post">Post Comment</button>
+                  </form>
+                </section>
+              </div>
+        </section>
+        <section class="footer">
+
+        </section>
+    </body>
+
+                  
+                        
+    <!-- <script>
+        function test(){
+            window.location.reload();
+        }
+    </script> -->

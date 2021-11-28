@@ -1,0 +1,475 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "lato",sans-serif;
+
+}
+html{
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    font-family: "lato",sans-serif;
+
+}
+button{
+    background-color:#ffffff;
+    border: none;
+}
+/*--------------------------*/
+/*---------TOP HEADER-------*/
+/*--------------------------*/
+header{
+    width: 100%;
+    background-size:cover;
+    background-position: center;
+}
+
+.log_sign{
+    color: white;
+    position: relative;
+    top: 25px;
+    float: right;
+    z-index: 999;
+    padding-right: 20px;
+}
+.log_sign h5 a{
+    font-size: 80%;
+    font-weight: 500;
+    color: rgb(114, 111, 111);
+    text-transform: uppercase;
+    transition:.4s;
+}
+.log_sign h5 a:hover{
+    color: #4587c5;
+}
+
+/*--------------------------*/
+/*---Universal H1 H2 TAG----*/
+/*--------------------------*/
+h1{
+    margin: 0;
+    color: aliceblue;
+    font-size: 100%;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+h2{
+    font-size:100%;
+    font-weight: 400;
+    letter-spacing: 5px;;
+    word-spacing: 5px;
+    color: aliceblue;
+}
+h3{
+    font-size:100%;
+    font-weight: 400;
+    letter-spacing: 2px;;
+    word-spacing: 3px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+/*--------------------------*/
+/*----UNIVERSAL BUTTON ----*/
+/*--------------------------*/
+a{
+    text-decoration: none;
+    color: black;
+}
+.btn:link,
+.btn:visited{
+    font-size: 80%;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #ffffff;
+    border-radius: 50px;
+    border: 1px solid #fa9887;
+    background-color: #fa3232;
+    padding:8px 30px;
+    transition:background-color .4s, border .4s;
+
+}
+.btn:hover,
+.btn:active {
+    background-color: #69202080;
+    border: 1px solid #fa3232;
+
+}
+/*---------------------------*/
+/*--------SEARCH BOX--------*/
+/*-------------------------*/
+
+
+/*---------------------------*/
+/*--------NAVIGATION--------*/
+/*-------------------------*/
+nav {
+    background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
+    width: 100%;
+    height: 70px;
+    /* border-top: 2px solid #3f51b5; */
+    box-shadow: 0px 0.5px 3px 0px grey;
+  }
+  
+  .nav_bar {
+    display: flex;
+  }
+  
+  .nav_list {
+    width: 80%;
+    height: 70px;
+    margin: auto;
+    border-left: 1px dotted #ffffff;
+    border-right: 1px dotted #ffffff;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+  
+  .nav_bar img {
+    height: 50px;
+    width: 55px;
+    margin: 10px 5px;
+  }
+  .nav_list ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 80%;
+    /* font-weight: bolder; */
+  }
+  .nav_list ul li {
+    display: inline-block;
+  }
+  
+  .nav_list ul li a {
+    display: block;
+    padding: 1.5em 1em;
+    color: #eeeeee;
+    font-weight: 300px;
+    transition: background-color 0.4s;
+  }
+  .nav_list ul li a:hover,
+  .nav_list ul li a:active {
+    color: #befde3;
+    background-color: #014a77;
+    border-bottom: 2px solid rgb(255, 255, 255);
+  }
+/*---------------------------*/
+/*--------Content--------*/
+/*-------------------------*/
+
+.container{
+    top: 60px;
+    position: relative;
+    width: 80%;
+    min-height: 1000px;
+    margin: auto;  
+}
+.bike_title{
+    width: 100%;
+    padding: 20px;
+    height: 75px;
+    box-shadow: 0 2px 2px #e2e2e2, 0 1px 1px #f1f1f1
+}
+
+.name_review{
+    width: 50%;
+    display: flex;
+    flex-flow: row;
+    padding-left: 15px;
+    margin:5px 0px ;
+}
+.name_review h3{
+    font-weight: 500;
+    padding-right: 100px;
+}
+.name_review p{
+    padding: 5px 20px;
+    font-size: 85%;
+}
+
+.short_cut_list{
+    width: 55%;
+    padding: 5px 15px;
+    font-size: 80%;
+}
+.short_cut_list ul{
+    list-style: none;
+    padding:3px 0px ;
+    display: flex;
+    justify-content: space-between;
+    transition: .4s;   
+}
+
+.short_cut_list ul li:hover{
+    padding-bottom: 8px;
+    border-bottom: 2px solid #82cefd ;
+}
+
+/*---------------------------*/
+/*--------Filter Bar--------*/
+/*-------------------------*/
+.bike_summary{
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    box-shadow: 0 2px 2px #e2e2e2, 0 1px 1px #f1f1f1;
+    margin-top: 20px;
+    border-top: 1px solid black;
+}
+.front_img{
+    margin-left: 5px;
+}
+
+.front_img_dec{
+    width: 480px;
+    padding: 14px 80px;
+    height: 315px;
+}
+
+.list_img{
+    display: flex;
+    flex-flow: row;
+}
+.list_img img{
+    width: 115px;
+    height: 120px;
+    padding: 10px 4px;
+    border: 1px solid;
+    margin: 5px;
+}
+
+.dis_section{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+.dis_section h3{
+    margin-top: 10px;
+}
+
+.priceList{
+    width: 600px;
+    border-collapse: collapse;
+    margin: 15px 82px;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+
+.priceList td{
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+.priceList tr:nth-child(even){background-color: #ebf3fa;}
+.priceList tr:nth-child(odd){background-color: #ecebec;}
+
+.description_par{
+    line-height: 20px;
+    font-weight: bolder;
+    height: 300px;
+    width: 630px;
+    margin-top: 20px;
+    margin-left: 67px;
+    padding: 10px;
+    text-align: justify;
+    font-size: 70%;
+    /* overflow-y: scroll; */
+}
+
+/*---------------------------*/
+/*--------Bike List Bar--------*/
+/*-------------------------*/
+
+
+.section_2{
+    margin-top: 20px;
+}
+
+.footer{
+    background-color: rgb(0, 31, 66);
+    height: 200px;
+    /* margin-top:-15px; */
+}
+
+.keyFeature{
+    margin-top: 25px;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 2px 2px #e2e2e2, 0 1px 1px #f1f1f1
+}
+.keyFeatureList{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+.mainKeyFeature{
+    text-transform: uppercase;
+    padding: 2px 15px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 90%;
+    font-weight: 400;
+}
+
+.featureTitle{
+    font-size: 85%;
+}
+.specification h4 {
+    background-color: #d1e4f0;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px dotted darkgray;
+
+}
+
+.spece{
+    margin-top: 20px;
+    width: 100%;
+    padding-bottom: 10px;
+    /* background-color: rgb(143, 49, 49); */
+   min-height:1000px;
+    box-shadow: 0 2px 2px #e2e2e2, 0 1px 1px #f1f1f1;
+    text-align: center;
+    font-size: 80%;
+    margin-bottom: 10px;
+
+}
+
+.spece table {
+    border-collapse: collapse;
+    width: 70%;
+    font-size: 80%;
+    margin: 20px auto;
+  }
+  
+  .spece th, td {
+    text-align: center;
+    padding: 8px;
+  }
+.spece tr{
+    font-size: 105%;
+    font-weight: bolder;
+}
+  
+.spece tr:nth-child(even){background-color: #f2f2f2}
+  
+.spece th {
+    width: 45%;
+    background-color: #080808;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 110%;
+    text-transform: uppercase;
+  }
+
+  /*---------------------------*/
+/*--------Review--------*/
+/*-------------------------*/
+  .review-container {
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 70%;
+    min-height: 80vh;
+    display: flex;
+    flex-flow: row;
+
+  }
+  .review-left {
+    width: 50%;
+    margin: 20px;
+    padding: 10px;
+    font-family: system-ui;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    /* font-size: initial; */
+    font-size: 18px;
+  }
+  
+  .review-right {
+    margin: 20px;
+    padding: 10px;
+    font-family: system-ui;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    /* font-size: initial; */
+    font-size: 18px;
+  }
+  .review-form {
+    display: flex;
+    flex-flow: column;
+  }
+  .review-input {
+    padding: 6px;
+    border-radius: 5px;
+    margin: 8px 0px;
+    width: 350px;
+    outline: none;
+    border: none;
+    height: 45px;
+    background-color: white;
+    border: 1px solid black;
+  }
+  button {
+    transition: 1s;
+    margin: 6px 30%;
+    width: 145px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to top left, #f83030, #ff8686);
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+  }
+  button:hover {
+    transition: 1s;
+    background-image: linear-gradient(to top left, #08b842, #26d17c);
+    margin: 6px 30%;
+    width: 145px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+  }
+  .imgName {
+    display: flex;
+    flex-flow: row;
+  }
+  .personImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    padding: 0px;
+    margin: 5px 7px;
+  }
+  .personName {
+    margin: 10px 5px;
+  }
+  .commentText {
+    font-size: 15px;
+    margin-left: 57px;
+    margin-top: -10px;
+  }
+  .text {
+    height: 200px;
+    padding: 7px;
+    border-radius: 5px;
+  }
+ 

@@ -1,0 +1,195 @@
+
+<link rel="stylesheet" type="text/css" href="vendor/nomalize.css"/>
+<link rel="stylesheet" type="text/css" href="css/grid.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+  rel="stylesheet"
+/>
+
+<header>
+    <div class="log_sign">
+      <h5><a href="../reg/index.php"> Log In / Sign Up </a></h5>
+    </div>
+    <div class="top_header">
+      <h1>All types of bicycles available under one roof</h1>
+      <h1>Buy a bicycle or buy happiness, both are same things</h1>
+      <h2>LOVE BIKE & BE BIKER</h2>
+
+      <div class="search_box">
+        <a class="btn" href="#">Subscribe</a>
+        <input type="text" name="box" placeholder="Search Your True Love" />
+        <button type="submit">
+          <a href=""><i class="fa fa-search"></i></a>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!------Navigation Start-->
+   <%- include('./nav.ejs')%>
+<!--------Container Starrt-->
+  <br />
+  <section class="container">
+    <div class="left_filter">
+      <p class="content_heading top-brand">CATEGORY</p>
+      <div class="catagory_list">
+        <ul>
+          <li>
+            <input id="honda" type="checkbox" value="Honda" /><label
+              for="honda"
+              >BIKE</label
+            >
+          </li>
+          <li>
+            <input id="YAMAHA" type="checkbox" value="YAMAHA" /><label
+              for="YAMAHA"
+              >MOBILES</label
+            >
+          </li>
+          <li>
+            <input id="SUZUKI" type="checkbox" value="SUZUKI" /><label
+              for="SUZUKI"
+              >PC / LAPTOP</label
+            >
+          </li>
+          <li>
+            <input id="TVS" type="checkbox" value="TVS" /><label for="TVS"
+              >TV</label
+            >
+          </li>
+          <li>
+            <input id="HERO" type="checkbox" value="HERO" /><label for="HERO"
+              >CAMERA</label
+            >
+          </li>
+          
+        </ul>
+      </div>
+      <br />
+      <p class="content_heading price">PRICE RENGE</p>
+      <br />
+      <div class="catagory_list price_list">
+        <ul>
+          <li>
+            <input id="ten-six" type="checkbox" value="ten-six" /><label
+              for="ten-six"
+              >TK 10000-60000</label
+            >
+          </li>
+          <li>
+            <input id="six-one" type="checkbox" value="six-one" /><label
+              for="six-one"
+              >TK 60000-100000</label
+            >
+          </li>
+          <li>
+            <input
+              id="one-onefive"
+              type="checkbox"
+              value="one-onefive"
+            /><label for="one-onefive">TK 100000-150000</label>
+          </li>
+          <li>
+            <input
+              id="onefive-two"
+              type="checkbox"
+              value="onefive-two"
+            /><label for="onefive-two">TK 150000-200000</label>
+          </li>
+          <li>
+            <input
+              id="two-twofive"
+              type="checkbox"
+              value="two-twofive"
+            /><label for="two-twofive">TK 200000-250000</label>
+          </li>
+          <li>
+            <input
+              id="twofive-five"
+              type="checkbox"
+              value="twofive-five"
+            /><label for="twofive-five">TK 250000-500000</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br />
+    <div class="main_content">
+      <p class="content_heading bike_list">BIKE LIST</p>
+      <h3 class="cat_title">Bikes</h3>
+      <div class="moto_list">
+      
+          <% getProduct.forEach(product=> { %>
+            <% if(product.category ==="bike") { %>
+            <div class="col1">
+              <input class="com-checkBox" id="" type="checkbox" value="ten-six" />
+              <img
+                src="css/img/mt15-1.jpg"
+                alt="M15_Bike"
+                class="element"
+              />
+              <h5 class="bike_name"><%= product.model%><h5>
+              <div class="ele_heightlight">
+                <p class="ele_price">Brand</p>
+                <p class="ele_price"><%= product.brand%></p>
+              </div>
+              <div class="ele_heightlight">
+                <p class="ele_milage">Price</p>
+                <p class="ele_milage"><%= product.price%></p>
+              </div>
+              <div class="ele_heightlight">
+                <p class="ele_milage">Rating</p>
+                <p class="ele_milage"><%= product.ratingsAverage%></p>
+              </div>
+              <button class="details_button"><a class="#" href='/details/<%=product.slug%>'>Details</a></button>
+            </div>
+        <% }; %>
+      <% }); %>
+                
+      </div>
+      <!------2nd Product------->
+      <h3 class="cat_title">PC</h3>
+      <div class="moto_list">
+        <% getProduct.forEach(product=> { %>
+          <% if(product.category ==="mobile") { %>
+          <div class="col1">
+            <input class="com-checkBox" id="" type="checkbox" value="ten-six" />
+            <img
+              src="css/img/mt15-1.jpg"
+              alt="M15_Bike"
+              class="element"
+            />
+            <h5 class="bike_name"><%= product.model%><h5>
+            <div class="ele_heightlight">
+              <p class="ele_price">Brand</p>
+              <p class="ele_price"><%= product.brand%></p>
+            </div>
+            <div class="ele_heightlight">
+              <p class="ele_milage">Price</p>
+              <p class="ele_milage"><%= product.price%></p>
+            </div>
+            <div class="ele_heightlight">
+              <p class="ele_milage">Rating</p>
+              <p class="ele_milage"><%= product.ratingsAverage%></p>
+            </div>
+            <button class="details_button"><a class="#" href='/details/<%=product.slug%>'>Details</a></button>
+          </div>
+      <% }; %>
+    <% }) %>
+           
+      </div>
+      <!----3rd Product---->
+              <h3 class="cat_title">Mobiles</h3>
+      <div class="moto_list">
+
+      
+       
+       
+        
+      </div>
+      <!-------->
+    </div>
+  </section>
+  <section class="footer"></section>

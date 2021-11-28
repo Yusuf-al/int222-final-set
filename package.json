@@ -1,0 +1,27 @@
+{
+  "name": "university_project",
+  "version": "1.0.0",
+  "description": "int222 project based on product review",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "start:prod": "SET NODE_ENV=production & nodemon server.js"
+  },
+  "author": "Yusuf Al Naiem",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^6.0.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "slugify": "^1.6.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
