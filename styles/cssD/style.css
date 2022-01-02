@@ -187,7 +187,7 @@ nav {
 }
 .name_review h3{
     font-weight: 500;
-    padding-right: 100px;
+    padding-right: 65px;
 }
 .name_review p{
     padding: 5px 20px;
@@ -296,7 +296,7 @@ nav {
 
 .footer{
     background-color: rgb(0, 31, 66);
-    height: 200px;
+    height: 250px;
     /* margin-top:-15px; */
 }
 
@@ -340,7 +340,7 @@ nav {
     width: 100%;
     padding-bottom: 10px;
     /* background-color: rgb(143, 49, 49); */
-   min-height:1000px;
+   min-height:500px;
     box-shadow: 0 2px 2px #e2e2e2, 0 1px 1px #f1f1f1;
     text-align: center;
     font-size: 80%;
@@ -471,5 +471,16 @@ nav {
     height: 200px;
     padding: 7px;
     border-radius: 5px;
+  }
+  .thumbnail:hover{
+    opacity:1;
+  }
+  .active{
+    border-color:#545454;
+    opacity: 1;
+  }
+  .fas{
+    color: rgba(2,83,185,1);
+    padding:0px 5px;
   }
  

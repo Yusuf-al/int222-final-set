@@ -1,0 +1,76 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<div class="row">
+    <div class="col-lg-12 mx-auto">
+        <div  class="card border-0 shadow">
+            <% if(message.length>0){%>
+                <div style="width: 25%;
+                margin:20px; align-items: center;" class="alert alert-success">
+                  <%= message%>
+                </div>
+            <%}%>
+            <div class="card-body p-5">
+                 <a class="btn btn-secondary btn-rounded" href="/admin/add-product">Add Product</a>
+                 <a class="btn btn-secondary btn-rounded" href="/admin/log-out">Log Out</a>
+                <!-- Responsive table -->
+                <div class="table-responsive">
+                    <table class="table m-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Serial No</th>
+                                <th scope="col">Brand</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Rating Average</th>
+                                <th scope="col">Total Rating</th>
+                                <th scope="col">Specification</th>
+                                <th scope="col">action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <% getProduct.forEach((item,sl)=>{ %>
+                            <tr>
+                                <th scope="row"><%= sl+1%></th>
+                                <td><%= item.brand%></td>
+                                <td><%= item.model%></td>
+                                <td><%= item.category%></td>
+                                <td><%= item.price%></td>
+                                <td><%= item.description%></td>
+                                <td><%= item.ratingsAverage%></td>
+                                <td>120</td>
+                                <td><%= JSON.stringify(item.specification)%></td>
+                                <td>
+                                    <!-- Call to action buttons -->
+                                    <ul class="list-inline m-0">
+                                        <li class="list-inline-item">
+                                            <a href='/admin/update/<%= item.slug%>'><i class="fas fa-edit"></i></a>
+                                        </li>
+                                
+                                        <li class="list-inline-item">
+                                            <a href='/admin/delete/<%= item.slug%>'><i class="far fa-trash-alt"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <% }); %>
+        
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function() {
+    $('.alert').remove();
+}, 3000);
+</script>

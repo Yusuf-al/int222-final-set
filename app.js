@@ -5,11 +5,18 @@ const morgan = require('morgan');
 const appError = require('./utils/appError')
 const globalErrHandle = require('./controller/errController');
 const ReRouter = require('./allrout/reviewRout');
-const viewRouter = require('./allrout/viewRouter');
+const router = require('./allrout/viewRouter');
 const ejs = require('ejs');
-const expressLayout = require('express-ejs-layouts')
+const expressLayout = require('express-ejs-layouts');
+const cookieParser = require("cookie-parser");
+const session = require('express-session');
+const flash = require('connect-flash');
+const override = require('method-override');
 const path = require('path')
+
+
 const app = express();
+app.use(express.json());
 
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'styles')));
@@ -19,15 +26,27 @@ app.set('view engine', 'ejs');
 
 
 app.use(morgan('dev'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(session({
+    secret: process.env.JWT_SECRET,
+    cookie: { maxAge: 600 },
+    resave: false,
+    saveUninitialized: false
+    
+}));
+
+app.use(flash());
+app.use(override('_method'));
+
 
 
 //All Middlewar Rout
 
 
 
-app.use('/', viewRouter);
+app.use('/', router);
 app.use('/api/projectAssing/bikes', bikeRouter);
 app.use('/api/projectAssing/all-products', productRouter);
 app.use('/api/projectAssing/review', ReRouter);

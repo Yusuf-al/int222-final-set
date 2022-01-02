@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
     coverImg:{
         type: String
     },
-    imgs: { type: String },
+    imgs: [String ],
     specification: [{
         type: Object,
         
@@ -60,11 +60,11 @@ productSchema.pre('save', function (next){
     next();
 });
 
-productSchema.pre(/^find/, function (next) {
-    this.populate({
-        path: 'review'
-    });
-})
+// productSchema.pre(/^find/, function (next) {
+//     this.populate({
+//         path: 'review'
+//     });
+// })
 
 const productList = mongoose.model('ProductList', productSchema)
 

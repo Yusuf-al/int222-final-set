@@ -8,6 +8,9 @@
   href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
   rel="stylesheet"
 />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+
 
 <header>
     <div class="log_sign">
@@ -20,7 +23,7 @@
 
       <div class="search_box">
         <a class="btn" href="#">Subscribe</a>
-        <input type="text" name="box" placeholder="Search Your True Love" />
+        <input type="text" id="search" name="box" placeholder="Search Your Product" />
         <button type="submit">
           <a href=""><i class="fa fa-search"></i></a>
         </button>
@@ -37,30 +40,25 @@
       <div class="catagory_list">
         <ul>
           <li>
-            <input id="honda" type="checkbox" value="Honda" /><label
+            <input id="bike" name="bike" type="checkbox" value="unchecked" /><label
               for="honda"
               >BIKE</label
             >
           </li>
           <li>
-            <input id="YAMAHA" type="checkbox" value="YAMAHA" /><label
+            <input id="mobile" name="mobile" type="checkbox" value="unchecked" /><label
               for="YAMAHA"
               >MOBILES</label
             >
           </li>
           <li>
-            <input id="SUZUKI" type="checkbox" value="SUZUKI" /><label
+            <input id="pc" type="checkbox" name="pc" value="unchecked"" /><label
               for="SUZUKI"
               >PC / LAPTOP</label
             >
           </li>
           <li>
-            <input id="TVS" type="checkbox" value="TVS" /><label for="TVS"
-              >TV</label
-            >
-          </li>
-          <li>
-            <input id="HERO" type="checkbox" value="HERO" /><label for="HERO"
+            <input id="cam" type="checkbox" name="cam" value="unchecked" /><label for="HERO"
               >CAMERA</label
             >
           </li>
@@ -117,20 +115,22 @@
     </div>
     <br />
     <div class="main_content">
-      <p class="content_heading bike_list">BIKE LIST</p>
-      <h3 class="cat_title">Bikes</h3>
-      <div class="moto_list">
+      <p class="content_heading bike_list">All Product</p>
       
+      <div class="moto_list " id="bikeList">
+        <h3 class="cat_title">Bikes</h3>
           <% getProduct.forEach(product=> { %>
             <% if(product.category ==="bike") { %>
             <div class="col1">
               <input class="com-checkBox" id="" type="checkbox" value="ten-six" />
               <img
-                src="css/img/mt15-1.jpg"
-                alt="M15_Bike"
+                src="/uploads/<%= product.imgs[0]%>"
+                alt="<%= product.model%>"
                 class="element"
               />
-              <h5 class="bike_name"><%= product.model%><h5>
+              <h5 class="bike_name"><%= product.model%></h5>
+              <h5 style="display: none;"><%= product.category%></h5>
+              <p style="display: none;" ><%= product.brand%></p>
               <div class="ele_heightlight">
                 <p class="ele_price">Brand</p>
                 <p class="ele_price"><%= product.brand%></p>
@@ -150,18 +150,21 @@
                 
       </div>
       <!------2nd Product------->
-      <h3 class="cat_title">PC</h3>
-      <div class="moto_list">
+      
+      <div class="moto_list" id="mobileList">
+        <h3 class="cat_title">Mobiles</h3>
         <% getProduct.forEach(product=> { %>
           <% if(product.category ==="mobile") { %>
           <div class="col1">
             <input class="com-checkBox" id="" type="checkbox" value="ten-six" />
             <img
-              src="css/img/mt15-1.jpg"
-              alt="M15_Bike"
+            src="/uploads/<%= product.imgs[0]%>"
+            alt="<%= product.model%>"
               class="element"
             />
-            <h5 class="bike_name"><%= product.model%><h5>
+            <h5 class="bike_name"><%= product.model%></h5>
+            <h5 style="display: none;"><%= product.category%></h5>
+            <p style="display: none;" ><%= product.brand%></p>
             <div class="ele_heightlight">
               <p class="ele_price">Brand</p>
               <p class="ele_price"><%= product.brand%></p>
@@ -181,9 +184,37 @@
            
       </div>
       <!----3rd Product---->
-              <h3 class="cat_title">Mobiles</h3>
-      <div class="moto_list">
-
+             
+      <div class="moto_list" id="camList">
+        <h3 class="cat_title">cameras</h3>
+        <% getProduct.forEach(product=> { %>
+          <% if(product.category ==="camera") { %>
+          <div class="col1">
+            <input class="com-checkBox" id="" type="checkbox" value="ten-six" />
+            <img
+            src="/uploads/<%= product.imgs[0]%>"
+            alt="<%= product.model%>"
+              class="element"
+            />
+                <h5 class="bike_name"><%= product.model%></h5>
+                <h5 style="display: none;"><%= product.category%></h5>
+                 <p class="ele_price"><%= product.brand%></p>
+            <div class="ele_heightlight">
+              <p class="ele_price">Brand</p>
+              <p class="ele_price"><%= product.brand%></p>
+            </div>
+            <div class="ele_heightlight">
+              <p class="ele_milage">Price</p>
+              <p class="ele_milage"><%= product.price%></p>
+            </div>
+            <div class="ele_heightlight">
+              <p class="ele_milage">Rating</p>
+              <p class="ele_milage"><%= product.ratingsAverage%></p>
+            </div>
+            <button class="details_button"><a class="#" href='/details/<%=product.slug%>'>Details</a></button>
+          </div>
+      <% }; %>
+    <% }) %>
       
        
        
@@ -192,4 +223,88 @@
       <!-------->
     </div>
   </section>
-  <section class="footer"></section>
+  <section class="footer">
+    <%- include('./footer.ejs')%>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    const mobile = document.querySelector('#mobile');
+    const bike = document.querySelector('#bike');
+    const pc = document.querySelector('#pc');
+    const cam = document.querySelector('#cam');
+    const mobileList = document.querySelector('#mobileList');
+    const bikeList = document.querySelector('#bikeList');
+    const pcList = document.querySelector('#pcList');
+    const camList = document.querySelector('#camList');
+
+    mobile.addEventListener('change',function(e){
+      if(mobile.checked){
+        mobileList.style.display='flex';
+        bikeList.style.display='none';
+        camList.style.display='none';
+        pcList.style.display='none';
+      }else{
+        bikeList.style.display='flex';
+        mobileList.style.display='flex';
+        camList.style.display='flex';
+        pcList.style.display='flex';
+      }
+    })
+
+    bike.addEventListener('change',function(e){
+      if(bike.checked){
+        bikeList.style.display='flex';
+        mobileList.style.display='none';
+        camList.style.display='none';
+        pcList.style.display='none';
+      }else{
+        bikeList.style.display='flex';
+        mobileList.style.display='flex';
+        camList.style.display='flex';
+        pcList.style.display='flex';
+      }
+    })
+
+    cam.addEventListener('change',function(e){
+      if(cam.checked){
+        camList.style.display='flex';
+        mobileList.style.display='none';
+        bikeList.style.display='none';
+        pcList.style.display='none';
+      }else{
+        bikeList.style.display='flex';
+        mobileList.style.display='flex';
+        camList.style.display='flex';
+        pcList.style.display='flex';
+      }
+    })
+
+    const search = document.querySelector('#search');
+    search.addEventListener('keyup',function(e){
+      const keyWord = e.target.value.toLowerCase();
+      // console.log(keyWord);
+      // console.log(e.value);
+      const items = document.querySelectorAll('.col1');
+
+      for(let item of items){
+        // console.log(item.children);
+        const productName = item.children[2].innerText.toLowerCase();
+        const productbrand = item.children[4].innerText.toLowerCase();
+        const productCategory = item.children[3].innerText.toLowerCase();
+
+        // console.log(item.children[5].children[1]);
+        // console.log(productName,productCategory,productbrand);
+
+        if(productName.includes(keyWord) || productbrand.includes(keyWord) || productCategory.includes(keyWord)){
+          item.style.display = 'block';
+        }else{
+          item.style.display = 'none';
+        }
+      }
+    })
+    // $("input:checkbox").attr("unchecked",true).click(function(){
+    //   let show ="."+$(this).attr("value");
+    //   $(show).toggle();
+    // })
+  </script>
